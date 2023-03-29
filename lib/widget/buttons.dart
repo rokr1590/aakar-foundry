@@ -1,7 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:aakarfoundry/colors.dart';
+import 'package:aakarfoundry/utils/color_constant.dart';
 
 enum ButtonSize { large, small }
 
