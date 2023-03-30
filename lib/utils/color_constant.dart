@@ -6,4 +6,5 @@ class Colorselect {
   static Color secondaryColor = const Color(0xFF6A7D8E);
   static Color bgDark = const Color(0xFFC7CEDB);
   static Color bgLight = const Color(0xFFF4F4F9);
+  static Color HelperRed = const Color(0xFFEA3F2D);
 }

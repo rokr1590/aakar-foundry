@@ -1,5 +1,7 @@
 import 'package:aakarfoundry/widget/buttons.dart';
+import 'package:aakarfoundry/widget/textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:bootstrap_icons/bootstrap_icons.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,10 +40,17 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[
-            LoginButton(
-              type: Type.primary,
-              size: ButtonSize.large,
-            ),
+            // LoginButton(
+            //   type: Type.primary,
+            //   size: ButtonSize.large,
+            // ),
+            textfield(
+              hinttext: "Hello",
+              topString: "Hello",
+              // prefixicon: BootstrapIcons.person,
+              prefixicon: null,
+              suffixicon: BootstrapIcons.cloud_sleet,
+            )
           ],
         ),
       ),
