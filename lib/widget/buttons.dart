@@ -21,8 +21,8 @@ class LoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         padding: size == ButtonSize.large
-            ? EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0)
-            : EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+            ? const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0)
+            : const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4.0),
           border: type == Type.outlined ? Border.all(width: 2.0) : null,
@@ -36,7 +36,7 @@ class LoginButton extends StatelessWidget {
                 : Colorselect.primaryColor,
             fontSize: size == ButtonSize.large ? 16.0 : 14.0,
             fontWeight:
-            size == ButtonSize.large ? FontWeight.bold : FontWeight.w500,
+                size == ButtonSize.large ? FontWeight.bold : FontWeight.w500,
           ),
         ));
   }
