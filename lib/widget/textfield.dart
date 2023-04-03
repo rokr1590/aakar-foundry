@@ -3,7 +3,7 @@
 import '../utils/color_constant.dart';
 import 'package:flutter/material.dart';
 
-import '../utils/typography.dart';
+import '../themes/app_style.dart';
 
 class textfield extends StatefulWidget {
   final IconData? prefixicon;
@@ -32,7 +32,7 @@ class _textfieldState extends State<textfield> {
           padding: EdgeInsets.only(left: 2.0),
           child: Text(
             widget.topString,
-            style: TextStyles.Label4(Colorselect.primaryColor),
+            style: AppStyle.txtPoppinsMedium14(Colorselect.primaryColor),
           ),
         ),
         SizedBox(height: 2.0),
@@ -81,12 +81,7 @@ class _textfieldState extends State<textfield> {
           padding: EdgeInsets.only(left: 2.0),
           child: widget.bottomString != ""
               ? Text(widget.bottomString,
-                  style: TextStyles.Label6(
-                    Colorselect.HelperRed,
-
-                    // fontSize: 11.0,
-                    // fontWeight: FontWeight.w500,
-                  ))
+                  style: AppStyle.txtPoppinsMedium10(Colorselect.HelperRed))
               : null,
         ),
       ]),
