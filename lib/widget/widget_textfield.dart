@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 
 import '../themes/app_style.dart';
 
-class textfield extends StatefulWidget {
+class WidgetTextfield extends StatefulWidget {
   final IconData? prefixicon;
   final IconData? suffixicon;
   final String hinttext;
   final String topString;
   final String bottomString;
-  const textfield(
+  const WidgetTextfield(
       {super.key,
       this.prefixicon,
       this.suffixicon,
@@ -20,10 +20,10 @@ class textfield extends StatefulWidget {
       this.bottomString = ""});
 
   @override
-  State<textfield> createState() => _textfieldState();
+  State<WidgetTextfield> createState() => _WidgetTextfieldState();
 }
 
-class _textfieldState extends State<textfield> {
+class _WidgetTextfieldState extends State<WidgetTextfield> {
   @override
   Widget build(BuildContext context) {
     return Container(
