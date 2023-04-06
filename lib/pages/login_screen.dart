@@ -61,7 +61,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.bold,
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
