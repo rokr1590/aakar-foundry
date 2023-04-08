@@ -39,7 +39,7 @@ class _WidgetTextfieldState extends State<WidgetTextfield> {
         SizedBox(
           width: 320,
           height: 44,
-          child: TextField(
+          child: TextFormField(
             decoration: InputDecoration(
               filled: true,
               isDense: true,
@@ -49,8 +49,11 @@ class _WidgetTextfieldState extends State<WidgetTextfield> {
                       child: Icon(widget.prefixicon, size: 18.0))
                   : null,
               hintText: widget.hinttext,
-              contentPadding:
-                  EdgeInsets.symmetric(vertical: 18.0, horizontal: 16.0),
+              contentPadding:const EdgeInsets.only(
+                  left: 8.0,
+                  bottom: 8.0,
+                  top: 8.0
+              ), /*EdgeInsets.symmetric(vertical: 18.0, horizontal: 16.0),*/
               hintStyle: TextStyle(
                 fontSize: 12,
                 color: Colorselect.secondaryColor,
