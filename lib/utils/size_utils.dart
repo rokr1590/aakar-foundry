@@ -6,19 +6,21 @@ import 'package:flutter/material.dart';
 Size size = WidgetsBinding.instance.window.physicalSize /
     WidgetsBinding.instance.window.devicePixelRatio;
 
-const num DESIGN_HEIGHT = 360 ;
-const num DESIGN_WIDTH = 800;
+const num DESIGN_HEIGHT = 800;
+const num DESIGN_WIDTH = 360;
 
 ///This method is used to get device viewport width.
 get width {
   return size.width;
 }
 
-
 ///This method is used to get device viewport height.
 get height {
-  num statusBar = MediaQueryData.fromWindow(WidgetsBinding.instance.window).viewPadding.top;
-  num bottomBar = MediaQueryData.fromWindow(WidgetsBinding.instance.window).viewPadding.bottom;
+  num statusBar =
+      MediaQueryData.fromWindow(WidgetsBinding.instance.window).viewPadding.top;
+  num bottomBar = MediaQueryData.fromWindow(WidgetsBinding.instance.window)
+      .viewPadding
+      .bottom;
   num screenHeight = size.height - statusBar - bottomBar;
   return screenHeight;
 }
@@ -26,6 +28,7 @@ get height {
 double getHorizontalSize(double px) {
   return ((px * width) / DESIGN_WIDTH);
 }
+
 double getVerticalSize(double px) {
   return ((px * height) / (DESIGN_HEIGHT));
 }

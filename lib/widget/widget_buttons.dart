@@ -7,11 +7,11 @@ enum ButtonSize { large, small }
 
 enum Type { primary, secondary, outlined }
 
-class LoginButton extends StatelessWidget {
+class WidgetButton extends StatelessWidget {
   final ButtonSize size;
   final Type type;
 
-  const LoginButton({
+  const WidgetButton({
     super.key,
     this.type = Type.primary,
     this.size = ButtonSize.large,
@@ -36,7 +36,7 @@ class LoginButton extends StatelessWidget {
                 : Colorselect.primaryColor,
             fontSize: size == ButtonSize.large ? 16.0 : 14.0,
             fontWeight:
-            size == ButtonSize.large ? FontWeight.bold : FontWeight.w500,
+                size == ButtonSize.large ? FontWeight.bold : FontWeight.w500,
           ),
         ));
   }
