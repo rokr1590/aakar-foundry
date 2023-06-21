@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(fontFamily: 'Poppins'),
         title: 'Flutter Demo',
         home: SafeArea(
-          child: ScreenLogin(),
+          child: TopNavBar(),
         ));
 
   }
