@@ -1,6 +1,7 @@
 import 'package:aakarfoundry/pages/screen_login.dart';
 import 'package:aakarfoundry/widget/widget_buttons.dart';
 import 'package:aakarfoundry/widget/widget_textfield.dart';
+import 'package:aakarfoundry/widget/widget_top_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
         title: 'Flutter Demo',
         home: SafeArea(
-          child: ScreenLogin(),
+          child: TopNavBar(),
         ));
   }
 }
