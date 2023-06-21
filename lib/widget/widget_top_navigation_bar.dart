@@ -11,42 +11,41 @@ class TopNavBar extends StatelessWidget {
       appBar: AppBar(),
       body: DefaultTabController(
         length: 3,
-        child: Container(
-          color: Colors.blue,
-          child: Column(
-            children: [
-              ButtonsTabBar(
-                backgroundColor: Colorselect.afBlueLight,
-                unselectedBackgroundColor: Colors.grey[300],
-                tabs: const [
-                  Tab(
+        child: Column(
+          children: [
+            ButtonsTabBar(
+              backgroundColor: Colorselect.afBlueLight,
+              unselectedBackgroundColor: Colors.grey[300],
+              tabs: const [
+                Expanded(
+                  child: Tab(
                     text: "Home",
                   ),
-                  Tab(
-                    text: "RFQ",
+                ),
+                Tab(
+                  text: "RFQ",
+                ),
+                Tab(
+                  text: "ECN",
+                ),
+              ],
+            ),
+            const Expanded(
+              child: TabBarView(
+                children: [
+                  Center(
+                    child: Icon(Icons.directions_car),
                   ),
-                  Tab(
-                    text: "ECN",
+                  Center(
+                    child: Icon(Icons.directions_transit),
+                  ),
+                  Center(
+                    child: Icon(Icons.directions_bike),
                   ),
                 ],
               ),
-              const Expanded(
-                child: TabBarView(
-                  children: [
-                    Center(
-                      child: Icon(Icons.directions_car),
-                    ),
-                    Center(
-                      child: Icon(Icons.directions_transit),
-                    ),
-                    Center(
-                      child: Icon(Icons.directions_bike),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

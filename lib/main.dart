@@ -1,9 +1,9 @@
 import 'package:aakarfoundry/pages/screen_login.dart';
+
 import 'package:aakarfoundry/widget/widget_buttons.dart';
 import 'package:aakarfoundry/widget/widget_textfield.dart';
 import 'package:aakarfoundry/widget/widget_top_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:bootstrap_icons/bootstrap_icons.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +15,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+        theme: ThemeData(fontFamily: 'Poppins'),
         title: 'Flutter Demo',
         home: SafeArea(
-          child: TopNavBar(),
+          child: ScreenLogin(),
         ));
+
   }
 }
