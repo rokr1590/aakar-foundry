@@ -58,7 +58,7 @@ class AppStyle {
         color: color,
         fontSize: getFontSize(48),
         fontFamily: 'Poppins',
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w700,
         letterSpacing: 0.01,
         height: 1.5,
       );
@@ -67,7 +67,7 @@ class AppStyle {
         color: color,
         fontSize: getFontSize(36),
         fontFamily: 'Poppins',
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w700,
         letterSpacing: 0.01,
         height: 1.5,
       );

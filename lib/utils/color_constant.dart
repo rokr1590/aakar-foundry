@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Colorselect {
-  static Color primaryColor = const Color(0xFF313E50);
-  static Color primaryLight = const Color(0xFF3A435E);
-  static Color secondaryColor = const Color(0xFF6A7D8E);
-  static Color bgDark = const Color(0xFFC7CEDB);
-  static Color bgLight = const Color(0xFFF4F4F9);
-  static Color HelperRed = const Color(0xFFEA3F2D);
+  static const Color afBlueDark = Color(0xFF054471);
+  static const Color afBlueLight = Color(0xFF0061A1);
+  static const Color afRedAccent = Color(0xFFCE1B22);
+
+  static const Color bule100 = Color(0xFFD8EEFD);
+  static const Color bule200 = Color(0xFFC5E6FC);
+  static const Color bule300 = Color(0xFFB1DCFB);
+  static const Color bule400 = Color(0xFF8BCDF9);
+
+  static const Color textFieldHintColor = Color(0xff647E95);
 }
