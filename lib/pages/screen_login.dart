@@ -30,37 +30,40 @@ class _ScreenLoginState extends State<ScreenLogin> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/images/login_bg.png'),
-                  fit: BoxFit.fitWidth),
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0xff8bcdf9), Color(0xff044471)],
-              ),
+        body: Stack(
+          children: [
+            Positioned.fill(
+              child: Container(
+                  padding: EdgeInsets.only(
+                    top: getVerticalSize(30),
+                    // bottom: MediaQuery.of(context).size.height * 1 / 2,
+                  ),
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/login_bg.png'),
+                        fit: BoxFit.fitWidth),
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Color(0xff8bcdf9), Color(0xff044471)],
+                    ),
+                  ),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          'assets/images/af_logo.png',
+                          width: 256,
+                        ),
+                        Image.asset(
+                          'assets/images/login_page_vector.png',
+                          width: 256,
+                        ),
+                      ])),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Expanded(
-                    child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Image.asset(
-                      'assets/images/af_logo.png',
-                      width: 256,
-                    ),
-                    Image.asset(
-                      'assets/images/login_page_vector.png',
-                      width: 256,
-                    ),
-                    SizedBox(
-                      height: getVerticalSize(12),
-                    )
-                  ],
-                )),
                 Container(
                   padding: EdgeInsets.symmetric(
                     horizontal: getHorizontalSize(20),
@@ -112,7 +115,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   ),
                 ),
               ],
-            )),
+            ),
+          ],
+        ),
       ),
     );
   }
