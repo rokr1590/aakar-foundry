@@ -16,128 +16,103 @@ class ScreenLogin extends StatefulWidget {
 }
 
 class _ScreenLoginState extends State<ScreenLogin> {
+  late final TextEditingController _controllerUsername;
+  late final TextEditingController _controllerPassword;
+
+  @override
+  void initState() {
+    _controllerUsername = TextEditingController();
+    _controllerPassword = TextEditingController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-          Color.fromRGBO(18, 42, 51, 1),
-          Color.fromRGBO(0, 18, 43, 0.1),
-        ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
-        child: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(colors: [
-            Color.fromRGBO(54, 66, 83, 0.86),
-            Color.fromRGBO(0, 18, 43, 0.1),
-          ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
-          child: Container(
-              decoration: const BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                Color.fromRGBO(54, 66, 83, 1),
-                Color.fromRGBO(0, 18, 43, 0.1),
-              ], begin: Alignment.topRight, end: Alignment.bottomRight)),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                      child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      const Text(
-                        'Aakar',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 64,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold,
-                          height: 0.64,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      const Text(
-                        'Foundry',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 28,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.bold,
-                            height: 0.40,
-                            letterSpacing: 4),
-                      ),
-                      SizedBox(
-                        height: getVerticalSize(40),
-                      ),
-                      Image.asset(
-                        'assets/images/login_page_vector.png',
-                        width: 256,
-                      ),
-                      SizedBox(
-                        height: getVerticalSize(12),
-                      )
-                    ],
-                  )),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: getHorizontalSize(20),
-                      vertical: getVerticalSize(40),
-                    ),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colorselect.bgLight,
-                      borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(24),
-                          topRight: Radius.circular(24)),
-                    ),
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/login_bg.png'),
+                  fit: BoxFit.fitWidth),
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Color(0xff8bcdf9), Color(0xff044471)],
+              ),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Login',
-                          style: TextStyle(
-                            color: Colorselect.primaryColor,
-                            fontSize: 36,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(
-                          height: getVerticalSize(16),
-                        ),
-                        const WidgetTextfield(
-                          hinttext: 'Enter username or email',
-                          topString: 'Enter Username/Email',
-                          prefixicon: BootstrapIcons.person_fill,
-                          suffixicon: BootstrapIcons.x,
-                        ),
-                        SizedBox(
-                          height: getVerticalSize(8),
-                        ),
-                        const WidgetTextfield(
-                          hinttext: 'Enter Password',
-                          topString: 'Enter password',
-                          prefixicon: BootstrapIcons.lock_fill,
-                          suffixicon: BootstrapIcons.eye,
-                        ),
-                        SizedBox(
-                          height: getVerticalSize(20),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          child: WidgetButton(),
-                        ),
-                        SizedBox(
-                          height: getVerticalSize(60),
-                        )
-                      ],
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Image.asset(
+                      'assets/images/af_logo.png',
+                      width: 256,
                     ),
+                    Image.asset(
+                      'assets/images/login_page_vector.png',
+                      width: 256,
+                    ),
+                    SizedBox(
+                      height: getVerticalSize(12),
+                    )
+                  ],
+                )),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: getHorizontalSize(20),
+                    vertical: getVerticalSize(40),
                   ),
-                ],
-              )),
-        ),
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * 1 / 2,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(24),
+                        topRight: Radius.circular(24)),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Login',
+                          style: AppStyle.txtPoppinsBold36(
+                              Colorselect.afBlueDark)),
+                      SizedBox(
+                        height: getVerticalSize(16),
+                      ),
+                      WidgetTextfield(
+                        controller: _controllerUsername,
+                        hintText: 'Enter username or email',
+                        labelText: 'Enter Username/Email',
+                        prefixIcon: BootstrapIcons.person_fill,
+                        suffixIcon: BootstrapIcons.x,
+                      ),
+                      SizedBox(
+                        height: getVerticalSize(8),
+                      ),
+                      WidgetTextfield(
+                        controller: _controllerPassword,
+                        hintText: 'Password',
+                        labelText: 'Enter password',
+                        prefixIcon: BootstrapIcons.lock_fill,
+                        suffixIcon: BootstrapIcons.eye,
+                      ),
+                      SizedBox(
+                        height: getVerticalSize(20),
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        child: WidgetButton(),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )),
       ),
     );
   }

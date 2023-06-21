@@ -60,7 +60,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/images/login_page_vector.png
+    - assets/images/
 
   fonts:
     - family: Poppins
@@ -69,7 +69,7 @@ flutter:
           weight: 300
         - asset: assets/font/Poppins-Medium.ttf
           weight: 400
-        - asset: assets/font/Poppins-REgular.ttf
+        - asset: assets/font/Poppins-Regular.ttf
           weight: 500
         - asset: assets/font/Poppins-SemiBold.ttf
           weight: 600

@@ -32,8 +32,8 @@ class WidgetButton extends StatelessWidget {
           "Login",
           style: TextStyle(
             color: type == Type.primary
-                ? Colorselect.bgLight
-                : Colorselect.primaryColor,
+                ? Colorselect.afBlueLight
+                : Colorselect.afBlueDark,
             fontSize: size == ButtonSize.large ? 16.0 : 14.0,
             fontWeight:
                 size == ButtonSize.large ? FontWeight.bold : FontWeight.w500,
@@ -44,9 +44,9 @@ class WidgetButton extends StatelessWidget {
 
 Color getColor(Type type) {
   if (type == Type.primary) {
-    return Colorselect.primaryColor;
+    return Colorselect.afBlueDark;
   } else if (type == Type.secondary) {
-    return Colorselect.secondaryColor;
+    return Colorselect.afBlueLight;
   } else {
     return Colors.white;
   }
