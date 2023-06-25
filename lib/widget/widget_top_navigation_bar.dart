@@ -20,20 +20,27 @@ class TopNavBar extends StatelessWidget {
               preferredSize: Size.fromHeight(120),
               child: AppBar(
                 title: Padding(
-                  padding: getPadding(top: 20,bottom: 2),
+                  padding: getPadding(top: 20, bottom: 2),
                   child: Row(
                     children: [
                       const CircleAvatar(
                         radius: 22,
-                        backgroundImage: NetworkImage("https://images.unsplash.com/photo-1639747280804-dd2d6b3d88ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"),
+                        backgroundImage: NetworkImage(
+                            "https://images.unsplash.com/photo-1639747280804-dd2d6b3d88ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"),
                       ),
                       Padding(
                         padding: getPadding(left: 10),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Sanket More",style: TextStyle(fontSize: getFontSize(20)),),
-                            Text("Marketing Department",style: AppStyle.txtPoppinsMedium12(Colors.red),)
+                            Text(
+                              "Sanket More",
+                              style: TextStyle(fontSize: getFontSize(20)),
+                            ),
+                            Text(
+                              "Marketing Department",
+                              style: AppStyle.txtPoppinsMedium12(Colors.red),
+                            )
                           ],
                         ),
                       ),
@@ -57,23 +64,20 @@ class TopNavBar extends StatelessWidget {
                 backgroundColor: Colorselect.afBlueDark,
               ),
             ),
-            body: TabBarView(
-                children:[
-                  Container(
-                    child: Center(child:Text("1st Tab")),
-                  ),
-                  RFQScreen(),
-                  /*Container(
+            body: TabBarView(children: [
+              Container(
+                child: Center(child: Text("1st Tab")),
+              ),
+              RFQScreen(),
+              /*Container(
                     child: Center(child:Text("2st Tab")),
                   ),*/
-                  ECNScreen()
-                  /*Container(
+              ECNScreen()
+              /*Container(
                     child: Center(child:Text("3st Tab")),
                   ),*/
-                ]
-            ),
-          )
-      ),
+            ]),
+          )),
     );
   }
 }

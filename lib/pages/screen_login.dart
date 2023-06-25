@@ -5,6 +5,7 @@ import 'package:aakarfoundry/utils/color_constant.dart';
 import 'package:aakarfoundry/utils/size_utils.dart';
 import 'package:aakarfoundry/widget/widget_buttons.dart';
 import 'package:aakarfoundry/widget/widget_textfield.dart';
+import 'package:aakarfoundry/widget/widget_top_navigation_bar.dart';
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -109,7 +110,14 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       ),
                       Container(
                         alignment: Alignment.center,
-                        child: WidgetButton(),
+                        child: WidgetButton(
+                          buttonText: 'Login',
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => TopNavBar(),
+                            ));
+                          },
+                        ),
                       ),
                     ],
                   ),

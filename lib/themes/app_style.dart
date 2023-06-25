@@ -87,7 +87,7 @@ class AppStyle {
         fontFamily: 'Poppins',
         fontWeight: FontWeight.w600,
         letterSpacing: 0.01,
-        height: 1.55,
+        height: 1,
       );
 
   static TextStyle txtPoppinsSemiBold16(Color color) => TextStyle(
@@ -117,12 +117,12 @@ class AppStyle {
       );
 
   static TextStyle txtPoppinsMedium11(Color color) => TextStyle(
-    color: color,
-    fontSize: getFontSize(11),
-    fontFamily: 'Poppins',
-    fontWeight: FontWeight.w500,
-    height: 1.5,
-  );
+        color: color,
+        fontSize: getFontSize(11),
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w500,
+        height: 1.5,
+      );
 
   static TextStyle txtPoppinsMedium18(Color color) => TextStyle(
         color: color,

@@ -9,11 +9,15 @@ enum ButtonSize { large, small }
 enum Type { primary, secondary, outlined }
 
 class WidgetButton extends StatelessWidget {
+  final String buttonText;
   final ButtonSize size;
   final Type type;
+  final VoidCallback onTap;
 
   const WidgetButton({
     super.key,
+    required this.buttonText,
+    required this.onTap,
     this.type = Type.primary,
     this.size = ButtonSize.large,
   });
@@ -21,10 +25,7 @@ class WidgetButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Navigator.pop(context);
-        Navigator.push(context,MaterialPageRoute(builder: (context) => TopNavBar()));
-      },
+      onTap: onTap,
       child: Container(
           padding: size == ButtonSize.large
               ? EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0)
@@ -34,16 +35,23 @@ class WidgetButton extends StatelessWidget {
             border: type == Type.outlined ? Border.all(width: 2.0) : null,
             color: getColor(type),
           ),
-          child: Text(
-            "Login",
-            style: TextStyle(
-              color: type == Type.primary
-                  ? Colorselect.afBlueLight
-                  : Colorselect.afBlueDark,
-              fontSize: size == ButtonSize.large ? 16.0 : 14.0,
-              fontWeight:
-                  size == ButtonSize.large ? FontWeight.bold : FontWeight.w500,
-            ),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                buttonText,
+                style: TextStyle(
+                  color: type == Type.primary
+                      ? Colors.white
+                      : Colorselect.afBlueDark,
+                  fontSize: size == ButtonSize.large ? 16.0 : 14.0,
+                  fontWeight: size == ButtonSize.large
+                      ? FontWeight.bold
+                      : FontWeight.w500,
+                ),
+              ),
+            ],
           )),
     );
   }
