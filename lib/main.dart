@@ -1,8 +1,4 @@
 import 'package:aakarfoundry/pages/screen_login.dart';
-
-import 'package:aakarfoundry/widget/widget_buttons.dart';
-import 'package:aakarfoundry/widget/widget_textfield.dart';
-import 'package:aakarfoundry/widget/widget_top_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +15,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(fontFamily: 'Poppins'),
         title: 'Flutter Demo',
         home: SafeArea(
-          child: TopNavBar(),
+          child: ScreenLogin()
         ));
 
   }

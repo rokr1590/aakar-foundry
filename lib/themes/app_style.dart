@@ -116,6 +116,14 @@ class AppStyle {
         height: 1.5,
       );
 
+  static TextStyle txtPoppinsMedium11(Color color) => TextStyle(
+    color: color,
+    fontSize: getFontSize(11),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
+    height: 1.5,
+  );
+
   static TextStyle txtPoppinsMedium18(Color color) => TextStyle(
         color: color,
         fontSize: getFontSize(18),
